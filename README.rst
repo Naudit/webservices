@@ -2,6 +2,9 @@
 Webservices
 ###########
 
+**NOTICE**: This is a fork from https://github.com/aldryncore/webservices which is archived. This fork is only intended to keep running https://github.com/Naudit/django-simple-sso as far as we can. 
+Feel free to generate MR (We probably accept most of them) but issues will not be fixed unless they are trivial.
+
 Build and consume web services (aka APIs) in Python. 
 
 ********

@@ -1,4 +1,19 @@
 # must be first:
+from webservices.sync import (
+    provider_for_flask,
+    FlaskTestingConsumer,
+    provider_for_django,
+    DjangoTestingConsumer,
+)
+from webservices.models import Provider, BaseConsumer, _split_dsn
+from webservices.exceptions import BadRequest, WebserviceError
+from webservices.async_helpers import provider_for_twisted, TwistedConsumer
+from twisted.web.server import Site
+from twisted.trial.unittest import TestCase as TwistedTestCase
+from twisted.internet import reactor
+from django.test.testcases import TestCase as DjangoTestCase
+from unittest import TestCase
+import sys
 from django.conf import settings
 settings.configure(
     ROOT_URLCONF='webservices.tests',
@@ -12,24 +27,6 @@ settings.configure(
 )
 
 # real import
-import sys
-from unittest import TestCase
-
-from django.test.testcases import TestCase as DjangoTestCase
-
-from twisted.internet import reactor
-from twisted.trial.unittest import TestCase as TwistedTestCase
-from twisted.web.server import Site
-
-from webservices.async import provider_for_twisted, TwistedConsumer
-from webservices.exceptions import BadRequest, WebserviceError
-from webservices.models import Provider, BaseConsumer, _split_dsn
-from webservices.sync import (
-    provider_for_flask,
-    FlaskTestingConsumer,
-    provider_for_django,
-    DjangoTestingConsumer,
-)
 
 
 urlpatterns = []

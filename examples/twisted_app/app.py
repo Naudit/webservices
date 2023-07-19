@@ -1,7 +1,7 @@
 from twisted.internet import reactor
 from twisted.web.server import Site
 
-from webservices.async import provider_for_twisted
+from webservices.async_helpers import provider_for_twisted
 from webservices.models import Provider
 
 
