@@ -7,3 +7,4 @@
 /examples/django_app/keys.sqlite
 /dist/
 /build/
+webservices/version.py
